@@ -1,4 +1,5 @@
 # 0.环境
+## 0.0 flask相关包安装
 >paddlepaddle 以及paddlehub均最新版<br>
 >flask_bootstrap flask-blueprint插件
 
@@ -6,17 +7,34 @@
 pip install flask_bootstrap
 pip install flask-blueprint
 ```
+## 0.1 paddlehub模块安装
+```python
+hub install stylepro_artistic
+hub install reading_pictures_writing_poems
+```
+
 # 1.命令行运行
 ```shell script
 hub run reading_pictures_writing_poems --input_image "scenery.jpg"
+hub run stylepro_artistic --选项 选项值
 ```
 
 # 2. 程序中运行
 ```python
 import paddlehub as hub
+import cv2
 
 readingPicturesWritingPoems = hub.Module(name="reading_pictures_writing_poems")
 readingPicturesWritingPoems.WritingPoem(image = "scenery.jpg", use_gpu=True)
+
+
+stylepro_artistic = hub.Module(name="stylepro_artistic")
+result = stylepro_artistic.style_transfer(
+    images=[{
+        'content': cv2.imread('/PATH/TO/CONTENT_IMAGE'),
+        'styles': [cv2.imread('/PATH/TO/STYLE_IMAGE')]
+    }])
+
 ```
 
 # 3.hub中运行
@@ -25,6 +43,7 @@ readingPicturesWritingPoems.WritingPoem(image = "scenery.jpg", use_gpu=True)
 hub run reading_pictures_writing_poems --input_image "scenery.jpg"
 hub serving start --config cpuconfig.json
 hub serving start --modules reading_pictures_writing_poems
+hub serving start --modules stylepro_artistic
 ```
 # 3.存在问题
 >不支持serving <br>

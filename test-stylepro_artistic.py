@@ -6,8 +6,8 @@ def style():
     stylepro_artistic = hub.Module(name="stylepro_artistic")
     result = stylepro_artistic.style_transfer(
         images=[{
-            'content': cv2.imread('2.jpg'),
-            'styles': [cv2.imread('1.jpg')],
+            'content': cv2.imread('4.jpg'),
+            'styles': [cv2.imread('./static/images/style/4.jpg')],
         }], output_dir='static/images/stylepro_artistic', visualization=True, use_gpu=False)
     filepath = result[0]["save_path"]
     print('filepath: %s' % filepath)

@@ -7,11 +7,11 @@ app = Flask(__name__)
 from reading_pictures import *
 
 app.register_blueprint(index_reading_pictures)
+from stylepro_artistic import *
+
+app.register_blueprint(index_stylepro_artistic)
 
 Bootstrap(app)
-
-
-# app.send_file_max_age_default = timedelta(seconds=1)
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -25,7 +25,6 @@ def error():
 
 
 if __name__ == '__main__':
-    app.config['JSON_AS_ASCII']=False
-    # app.config['SERVER_NAME']='livingbody.xyz'
-    # app.run(host='0.0.0.0',port=443, debug=True,ssl_context=("4543112_www.livingbody.xyz.pem", "4543112_www.livingbody.xyz.key"))
-    app.run(host='0.0.0.0',port=8080, debug=True,ssl_context=("4543112_www.livingbody.xyz.pem", "4543112_www.livingbody.xyz.key"))
+    app.config['JSON_AS_ASCII'] = False
+    app.run(host='0.0.0.0', port=8080, debug=True,
+            ssl_context=("4543112_www.livingbody.xyz.pem", "4543112_www.livingbody.xyz.key"))

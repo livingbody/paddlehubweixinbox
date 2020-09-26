@@ -1,0 +1,23 @@
+{
+  "modules_info": {
+    "stylepro_artistic": {
+      "init_args": {
+        "version": "1.0.0"
+      },
+      "predict_args": {
+        "use_gpu": false
+      }
+    },
+    "reading_pictures_writing_poems": {
+      "init_args": {
+        "version": "1.0.0"
+      },
+      "predict_args": {
+        "use_gpu": false
+      }
+    }
+  },
+  "port": 8866,
+  "use_multiprocess": false,
+  "workers": 2
+}

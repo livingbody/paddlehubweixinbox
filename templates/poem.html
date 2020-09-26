@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <title>PaddleHub 测试页 -- livingbody</title>
+    <title>PaddleHub 看图写诗 -- livingbody</title>
 </head>
 <body>
 
@@ -24,8 +24,8 @@
                 <a class="navbar-brand" class="active" href="/">PaddlePaddle</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="reading_pictures">看图写诗</a></li>
+              <ul class="nav navbar-nav">
+                    <li><a href="reading_pictures" class="active">看图写诗</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li><a href="stylepro_artistic">风格迁移</a></li>
@@ -36,8 +36,8 @@
 
     <div class="jumbotron container">
         <div class="col-md-6">
-            <h1>这是啥？</h1>
-            <p class="lead">这是个无聊的界面。
+             <h2>PaddleHub 看图写诗-- livingbody</h2>
+             <p class="lead">这是个无聊的界面。
                 <ins>好吧，放点自我介绍吧。 多多关注我的<a href="https://aistudio.baidu.com/aistudio/personalcenter/thirdview/89263">javaroom's AI
                         STUDIO</a></ins>
             </p>
@@ -45,25 +45,25 @@
         <div class="col-md-6"><img src="/static/images/paddlehub/logo.png"></div>
         <div class="col-md-6"><img src="/static/images/paddlehub/pp-logo.png"></div>
     </div>
-    <div class="container">
-        <table class="table table-bordered">
-            <tr>
-                <td width="30%"><strong>AISTUDIO用户名</strong></td>
-                <td width="70%">javaroom</td>
-            </tr>
-            <tr>
-                <td width="30%"><strong>AISTUDIO主页</strong></td>
-                <td width="70%">我在AI Studio上获得钻石等级，点亮6个徽章，来互关呀~
-                    <a href="https://aistudio.baidu.com/aistudio/personalcenter/thirdview/89263">javaroom's AI
-                        STUDIO主页</a>
-                </td>
-            </tr>
-            <tr>
-                <td width="30%"><strong>github</strong></td>
-                <td width="70%"><a href="https://github.com/livingbody">Livingbody's github</a>
-                </td>
-            </tr>
-        </table>
+    <div>
+        <form id="myform" class="form-horizontal" action="" enctype='multipart/form-data' method='POST'
+              onclick='LimitAttach(this.form, this.form.file.value);'>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">我的CSDN</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Text"
+                           value="https://blog.csdn.net/livingbody">
+                </div>
+
+                <label class="col-sm-1 control-label" for="file">照片上传</label>
+                <div class="col-sm-3">
+                    <input type="file" id="file" name="file"  class="required" >
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">开始</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 

@@ -57,7 +57,7 @@ def upload():
             return jsonify(results)
         except Exception:
             return render_template('404.html')
-    return render_template('index.html')
+    return render_template('poem.html')
 
 
 # 干活
